@@ -32,8 +32,6 @@
 	}
 }
 
-
-
 @keyframes dynamicAppearance {
 	0% {
 		opacity: 0;
@@ -64,3 +62,14 @@
 	animation: deleteClient 0.4s forwards ease !important;
 }
 /*---------------------------------------------------*/
+
+/*----------FOR CHILDREN OF MAIN CONTAINER-------------*/
+@keyframes AnimatedContent {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}

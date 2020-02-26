@@ -57,6 +57,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
 	justify-content: space-around;
 	align-items: center;
 }
+@mixin flexEvenly {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
 
 @mixin flexStartCenter {
 	display: flex;

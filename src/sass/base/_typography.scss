@@ -1,0 +1,45 @@
+html,
+body {
+	font-family: "Roboto", "Verdana", sans-serif;
+	font-weight: 400;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2 {
+	font-weight: 300;
+	text-align: center;
+	user-select: none;
+}
+
+h1 {
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	// margin: 0 auto 1rem auto;
+}
+
+h2 {
+	font-size: 2.3rem;
+}
+
+p {
+	text-align: justify;
+}
+
+.title {
+	@include flexColumnCenter;
+	width: 100%;
+	&::after {
+		content: "";
+		display: block;
+		height: 0.2rem;
+		width: 20%;
+		margin: 2rem auto;
+	}
+}
+
+label {
+	user-select: none;
+}

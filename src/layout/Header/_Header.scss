@@ -1,0 +1,70 @@
+$transition-time: 1s;
+
+.header {
+	position: relative;
+	flex: 0 0 100vh;
+	background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+	box-shadow: $box-shadow-box;
+	padding: 0 2rem;
+	transition: $transition-time ease-in-out;
+
+	&--main {
+		width: 70%;
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@include flexColumn;
+	}
+
+	&--collapsed {
+		@include flexCenter;
+		flex: 0 0 8rem;
+	}
+
+	&__btn-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 3rem;
+
+		.grid-item {
+			width: 15rem;
+			overflow: hidden;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 0;
+				background-image: linear-gradient(80deg, #ffc013 0%, #e46f34 50%, transparent 50%);
+				transition: 0.4s;
+			}
+
+			&:hover::before {
+				width: 220%;
+			}
+
+			&--1 {
+				grid-column: 1/3;
+				justify-self: center;
+			}
+			&--2 {
+				justify-self: end;
+			}
+			&--3 {
+				justify-self: start;
+			}
+
+			&__text {
+				transition: 0.4s;
+				position: relative;
+				z-index: 10;
+			}
+		}
+
+		animation: dynamicAppearance $transition-time ease forwards;
+	}
+}

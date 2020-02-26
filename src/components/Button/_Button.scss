@@ -1,0 +1,60 @@
+.btn {
+	position: relative;
+	min-width: 10rem;
+	padding: 1rem 1.5rem;
+	box-shadow: $box-shadow-input;
+	outline: none;
+	border: none;
+	border-radius: $border-radius-5;
+	cursor: pointer;
+	transition: 0.5s ease-in-out;
+	
+	
+
+	// &--white {
+	// 	background-color: #fff;
+	// 	&:hover {
+	// 		background-color: $color-dark-main;
+	// 		color: #fff;
+	// 	}
+	// }
+	// &--black {
+	// 	background-color: $color-dark-main;
+	// 	color: $color-light-main;
+	// 	&:hover {
+	// 		background-color: #fff;
+	// 		color: #000;
+	// 	}
+	// 	&:active {
+	// 		color: $color-light-main;
+	// 		background-color: #000;
+	// 	}
+	// }
+
+	// &--submit {
+	// 	background-color: $color-green-main;
+	// 	color: $color-light-main;
+
+	// 	&:hover {
+	// 		background-color: $color-green-hover;
+	// 	}
+	// }
+
+	// &--cancel {
+	// 	background-color: $color-google-red;
+	// 	color: $color-light-main;
+	// 	&:hover {
+	// 		background-color: $color-google-red-hover;
+	// 	}
+	// }
+
+	// &--sign-in-with-google {
+	// 	margin-top: 1rem;
+	// 	background-color: $color-google-red;
+	// 	color: $color-light-main;
+	// 	&:hover {
+	// 		color: white;
+	// 		background-color: $color-google-red-hover;
+	// 	}
+	// }
+}

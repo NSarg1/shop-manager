@@ -1,0 +1,26 @@
+//Abstracts
+@import "./sass/abstracts/variables";
+@import "./sass/base/reset";
+@import "./sass/abstracts/mixins";
+@import "./sass/abstracts/animations";
+
+//Base
+@import "./sass/base/reset";
+@import "./sass/base/base";
+@import "./sass/base/utilities";
+@import "./sass/base/typography";
+
+//APP
+@import "./App/App";
+
+//LAYOUT
+@import "./layout/Header/Header";
+@import "./layout/MainContent/MainContent";
+@import "./layout/Footer/Footer";
+
+//Pages
+@import "./pages/Shop/Shop";
+
+// COMPONENTS
+@import "./components/Navigation/Navigation";
+@import "./components/Button/Button";
