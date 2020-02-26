@@ -1,0 +1,13 @@
+//Abstracts
+@import "./sass/abstracts/variables";
+@import "./sass/base/reset";
+@import "./sass/abstracts/mixins";
+@import "./sass/abstracts/animations";
+
+//Base
+@import "./sass/base/reset";
+@import "./sass/base/base";
+@import "./sass/base/utilities";
+
+//APP
+@import "./App/App";
