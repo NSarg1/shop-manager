@@ -9,6 +9,8 @@ import Footer from "../layout/Footer/Footer.layout";
 // PAGES
 import Shop from "../pages/Shop/Shop.page";
 import AdminPanel from "../pages/AdminPanel/AdminPanel.page";
+import Accountant from '../pages/Accountant/Accountant.page'
+
 
 function App() {
 	return (
@@ -19,6 +21,8 @@ function App() {
 					<Switch>
 						<Route exact path='/shop' component={Shop} />
 						<Route exact path='/admin' component={AdminPanel} />
+						<Route exact path='/accounting' component={Accountant} />
+
 					</Switch>
 				</MainContent>
 			</div>
