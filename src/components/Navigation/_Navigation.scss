@@ -1,9 +1,10 @@
 .Navigation {
-	animation: dynamicAppearance $transition-time ease forwards;
+	animation: dynamicAppearance $transition-time-header ease forwards;
 	@include flexBetween;
 	width: 114rem;
 	border-bottom-left-radius: $border-radius-3;
 	border-bottom-right-radius: $border-radius-3;
+	
 	&__list {
 		flex: 0 0 50%;
 		@include flexEnd;
@@ -12,10 +13,6 @@
 	&__item {
 		margin-right: 2rem;
 	}
-	&__link {
-		border-radius: $border-radius-5;
-		background-color: blue;
-		display: inline-block;
-		padding: 1rem 2rem;
-	}
+	// &__link {
+	// }
 }

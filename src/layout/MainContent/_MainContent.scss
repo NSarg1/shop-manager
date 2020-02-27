@@ -1,8 +1,0 @@
-.MainContent {
-	flex: 1 1 auto;
-
-	& > div {
-		animation: AnimatedContent 2s ease forwards;
-		@include flexCenter;
-	}
-}

@@ -14,10 +14,13 @@ html {
 }
 
 body {
-	font-family: "Roboto", sans-serif;
-	font-size: 1.6rem;
-	line-height: $line-height;
+	font-family: "Roboto", "Verdana", sans-serif;
 	font-weight: 400;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: $line-height-body;
+	font-size: $font-size-body;
 }
 
 h1 {

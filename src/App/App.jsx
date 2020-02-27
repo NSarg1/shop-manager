@@ -3,7 +3,7 @@ import Header from "../layout/Header/Header.layout";
 import { Switch, Route, HashRouter } from "react-router-dom";
 
 // LAYOUT
-import MainContent from "../layout/MainContent/MainContent.layout";
+import MainContainer from "../layout/MainContainer/MainContainer.layout";
 import Footer from "../layout/Footer/Footer.layout";
 
 // PAGES
@@ -17,14 +17,14 @@ function App() {
 		<HashRouter basename='/'>
 			<div className='App'>
 				<Route component={Header} />
-				<MainContent className='MainContent'>
+				<MainContainer>
 					<Switch>
 						<Route exact path='/shop' component={Shop} />
 						<Route exact path='/admin' component={AdminPanel} />
 						<Route exact path='/accounting' component={Accountant} />
 
 					</Switch>
-				</MainContent>
+				</MainContainer>
 			</div>
 			<Route component={Footer} />
 		</HashRouter>

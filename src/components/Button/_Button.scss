@@ -1,60 +1,75 @@
 .btn {
 	position: relative;
 	min-width: 10rem;
-	padding: 1rem 1.5rem;
-	box-shadow: $box-shadow-input;
+	padding: 1.5rem 2rem;
 	outline: none;
-	border: none;
-	border-radius: $border-radius-5;
+
 	cursor: pointer;
-	transition: 0.5s ease-in-out;
+	overflow: hidden;
+	transition: 0.1s;
+
+	&--main {
+		transform: translateY(-0.3rem);
+		border-radius: $border-radius-5;
+		box-shadow: $box-shadow-button;
+
+		&::before {
+			content: "";
+			position: absolute;
+			border-radius: 50%;
+			top: 50%;
+			left: 50%;
+			height: 0;
+			width: 0;
+			transform: translate(-50%, -50%);
+			background-image: linear-gradient(#f6d365 0%, #fda085 100%);
+			transition: 0.5s;
+		}
+
+		&:hover {
+			&::before {
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		&:active {
+			transform: translateY(0);
+			box-shadow: $box-shadow-button--active;
+		}
+	}
+	&-link {
+		background-color: transparent;
+		border-radius: $border-radius-5;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 0;
+			width: 100%;
+			background-image: linear-gradient(#f6d365 0%, #fda085 100%);
+			transition: 0.5s;
+		}
+
+		&:hover {
+			&::before {
+				height: 100%;
+			}
+		}
+
+		&--active {
+			&::before {
+				height: 100%;
+			}
+		}
+	}
 	
-	
 
-	// &--white {
-	// 	background-color: #fff;
-	// 	&:hover {
-	// 		background-color: $color-dark-main;
-	// 		color: #fff;
-	// 	}
-	// }
-	// &--black {
-	// 	background-color: $color-dark-main;
-	// 	color: $color-light-main;
-	// 	&:hover {
-	// 		background-color: #fff;
-	// 		color: #000;
-	// 	}
-	// 	&:active {
-	// 		color: $color-light-main;
-	// 		background-color: #000;
-	// 	}
-	// }
-
-	// &--submit {
-	// 	background-color: $color-green-main;
-	// 	color: $color-light-main;
-
-	// 	&:hover {
-	// 		background-color: $color-green-hover;
-	// 	}
-	// }
-
-	// &--cancel {
-	// 	background-color: $color-google-red;
-	// 	color: $color-light-main;
-	// 	&:hover {
-	// 		background-color: $color-google-red-hover;
-	// 	}
-	// }
-
-	// &--sign-in-with-google {
-	// 	margin-top: 1rem;
-	// 	background-color: $color-google-red;
-	// 	color: $color-light-main;
-	// 	&:hover {
-	// 		color: white;
-	// 		background-color: $color-google-red-hover;
-	// 	}
-	// }
+	&__text {
+		transition: 0.4s;
+		position: relative;
+		z-index: 100;
+	}
 }

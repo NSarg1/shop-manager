@@ -10,12 +10,17 @@
 @import "./sass/base/utilities";
 @import "./sass/base/typography";
 
+// COMPONENTS
+@import "./components/Navigation/Navigation";
+@import "./components/Button/Button";
+@import "./components/Icon/Icon";
+
 //APP
 @import "./App/App";
 
 //LAYOUT
 @import "./layout/Header/Header";
-@import "./layout/MainContent/MainContent";
+@import "./layout/MainContainer/MainContainer";
 @import "./layout/Footer/Footer";
 
 //Pages
@@ -23,7 +28,3 @@
 @import "./pages/Accountant/Accountant";
 @import "./pages/AdminPanel/AdminPanel";
 
-
-// COMPONENTS
-@import "./components/Navigation/Navigation";
-@import "./components/Button/Button";

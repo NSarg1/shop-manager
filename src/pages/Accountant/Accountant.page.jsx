@@ -3,7 +3,7 @@ import React from "react";
 const Accountant = () => {
   return (
     <div>
-      <h1>Do your calculations</h1>
+      <h2>Do your calculations</h2>
     </div>
   );
 };

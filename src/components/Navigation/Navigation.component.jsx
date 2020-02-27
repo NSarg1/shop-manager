@@ -1,34 +1,50 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
 import { Nav, NavList } from "./Navigation.styled";
 
-const Navigation = ({ toggleHeader }) => {
+import Button from "../Button/Button.component";
+// import Icon from "../../components/Icon/Icon.component";
+
+const Navigation = (props) => {
+	const { history, location } = props;
+	console.log(location);
+
+	const handleClick = (address) => {
+		history.push(address);
+	};
+
+	const buttonClasses = "Navigation__link btn-link";
+
+	const linksData = [
+		{ address: "/shop", name: "SHOP" },
+		{ address: "/admin", name: "ADMIN PANEL" },
+		{ address: "/accounting", name: "ACCOUNTING" },
+	];
+
 	return (
 		<Nav className='Navigation'>
 			<div className='Header__logo'>
-				<Link to='/' className='Navigation__link'>
-					Shopify
-				</Link>
+				<Button onClick={handleClick.bind(this, "/")} className={buttonClasses}>
+					SHOPIFY
+				</Button>
 			</div>
-			
+
 			<NavList className='Navigation__list'>
-				<li onClick={toggleHeader} className='Navigation__item'>
-					<Link to='/shop' className='Navigation__link'>
-						Shop
-					</Link>
-				</li>
-				<li className='Navigation__item'>
-					<Link to='/admin' className='Navigation__link'>
-						Admin panel
-					</Link>
-				</li>
-				<li className='Navigation__item'>
-					<Link to='/accounting' className='Navigation__link'>
-						Accounting
-					</Link>
-				</li>
+				{linksData.map(({ address, name }) => {
+					return (
+						<li className='Navigation__item'>
+							<Button
+								onClick={handleClick.bind(this, address)}
+								className={
+									location.pathname === address
+										? `${buttonClasses} btn-link--active`
+										: buttonClasses
+								}>
+								{name}
+							</Button>
+						</li>
+					);
+				})}
 			</NavList>
 		</Nav>
 	);

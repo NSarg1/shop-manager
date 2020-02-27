@@ -5,7 +5,12 @@
 	display: flex;
 	flex-direction: column;
 
-	background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+	// background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+	background-image: linear-gradient(
+		89deg,
+		rgba(253, 220, 155, 1) 26.2%,
+		rgba(255, 215, 165, 1) 48.5%
+	);
 
 	//Hide scrollbar
 	-ms-overflow-style: none;

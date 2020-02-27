@@ -23,10 +23,12 @@ a {
 input,
 textarea,
 select,
-.FileInput {
+.FileInput,
+button {
 	font-family: "Roboto", sans-serif;
 	outline: none;
 	border: none;
 	resize: none;
 	background-color: #fff;
+	font-size: $font-size-body;
 }

@@ -1,0 +1,9 @@
+.main-container {
+	flex: 1 1 auto;
+
+	& > div {
+		animation: dynamicAppearance 2s ease forwards;
+		@include flexColumnStartCenter;
+		padding-top: 2rem;
+	}
+}
