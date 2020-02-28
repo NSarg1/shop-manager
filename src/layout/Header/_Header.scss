@@ -30,7 +30,7 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		@include flexColumnCenter;
-		animation: dynamicAppearance $transition-time-header * 4 ease forwards;
+		animation: dynamicAppearance $transition-time-header * 2.5 ease forwards;
 	}
 
 	&__btn-container {

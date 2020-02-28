@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import moment from "moment";
 import uniqid from "uniqid";
 //UTILITIES
@@ -18,6 +17,7 @@ const InputArea = () => {
 		category: "",
 		name: "",
 		imageUrl: "",
+		quantity: "",
 		price: "",
 		id: uniqid(),
 		lastChanged: today,
@@ -80,9 +80,10 @@ const InputArea = () => {
 					setImageState(undefined);
 					setLoading(false);
 					setItemState({
-						category: undefined,
+						category: "",
 						name: "",
 						imageUrl: "",
+						quantity: "",
 						price: "",
 						id: uniqid(),
 						lastChanged: today,
@@ -117,11 +118,14 @@ const InputArea = () => {
 					type='number'
 					name='price'
 					placeholder='35'
-					placholder="Item's value"
 					required
 				/>
-				<Select onChange={handleSelectChange} opt={itemState.category} required>
-					<option className='option-default' value='' selected={!itemState.category}>
+				<Select
+					onChange={handleSelectChange}
+					value={itemState.category}
+					defaultOption={itemState.category}
+					required>
+					<option className='option-default' value=''>
 						-- Select item's category --
 					</option>
 					<option className='select__option' value='hats'>
@@ -144,8 +148,16 @@ const InputArea = () => {
 					accept='image/png, image/jpeg'
 					required
 				/>
+				<InputForm
+					handleChange={handleChange}
+					value={itemState.quantity}
+					placeholder='Quantity'
+					type='number'
+					name='quantity'
+					required
+				/>
 				<div className='input-area__submit'>
-					<ButtonWithSpinner className='btn--submit' type='submit' isLoading={loading}>
+					<ButtonWithSpinner block variant='outline-dark' type='submit' isLoading={loading}>
 						Sumbit
 					</ButtonWithSpinner>
 				</div>

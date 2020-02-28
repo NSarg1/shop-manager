@@ -10,8 +10,8 @@ export const SpinnerOverlay = styled.div`
 
 export const SpinnerContainer = styled.div`
 	display: inline-block;
-	width: 4rem;
-	height: 4rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	border: 0.3rem solid rgba(195, 195, 195, 0.6);
 	border-radius: 50%;
 	border-top-color: #636767;

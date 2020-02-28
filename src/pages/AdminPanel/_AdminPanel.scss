@@ -1,5 +1,6 @@
 .admin-panel {
 	&__main {
+		flex: 1 0 auto;
 		display: flex;
 		flex-direction: column;
 	}
@@ -10,11 +11,20 @@
 		border-radius: $border-radius-5;
 		overflow: hidden;
 	}
+	&__filter-buttons {
+		display: flex;
+		justify-content: space-around;
+		width: 70%;
+		margin: 2rem auto;
+	}
 
-	&__collapse{
+	&__collapse {
 		background-color: rgba(0, 0, 0, 0.05);
 	}
 	&__toggle {
+		text-transform: uppercase;
+		background-color: rgba(0, 0, 0, 0.2);
+		font-size: 2rem;
 		margin: auto;
 		cursor: pointer;
 		display: flex;

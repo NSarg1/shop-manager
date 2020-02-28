@@ -1,4 +1,4 @@
-.btn {
+.ns-btn {
 	position: relative;
 	min-width: 10rem;
 	padding: 1rem 1.5rem;
@@ -42,7 +42,7 @@
 	&--link {
 		background-color: transparent;
 		border-radius: $border-radius-5;
-
+		border: 1px solid #fda085;
 		&::before {
 			content: "";
 			position: absolute;
@@ -70,8 +70,8 @@
 	&--submit {
 		background-color: transparent;
 		border-radius: $border-radius-5;
-		height: 50%;
-		
+		width: 100%;
+
 		&::before {
 			content: "";
 			position: absolute;

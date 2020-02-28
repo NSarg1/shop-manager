@@ -21,24 +21,3 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-size: $font-size-body;
 }
-
-h1 {
-	font-size: 3.5rem;
-	line-height: normal;
-}
-
-h2 {
-	font-size: 2.5rem;
-	line-height: normal;
-	margin-bottom: 0.5rem;
-}
-
-label {
-	font-weight: 500;
-	user-select: none;
-}
-
-// FOR TOASTIFY LIBRARY POP UP NOTIFICATION
-.notification {
-	color: black;
-}

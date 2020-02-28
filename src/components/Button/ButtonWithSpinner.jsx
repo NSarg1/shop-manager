@@ -1,12 +1,9 @@
 import React from "react";
 import WithSpinner from "../with-spinner/with-spinner.component";
+import { Button } from "react-bootstrap";
 
-const CustomButtonWithSpinner = ({ className, children, ...otherProps }) => {
-	return (
-		<button {...otherProps} className={className ? `btn ${className}` : "btn"}>
-			<span className='btn__text'>{children}</span>
-		</button>
-	);
+const CustomButtonWithSpinner = ({ children, ...otherProps }) => {
+	return <Button {...otherProps}>{children}</Button>;
 };
 
 export default WithSpinner(CustomButtonWithSpinner);

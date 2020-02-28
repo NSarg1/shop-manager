@@ -13,7 +13,7 @@ const Navigation = (props) => {
 		history.push(address);
 	};
 
-	const buttonClasses = "Navigation__link btn--link";
+	const buttonClasses = "Navigation__link ns-btn--link";
 
 	const linksData = [
 		{ address: "/shop", name: "SHOP" },
@@ -37,7 +37,7 @@ const Navigation = (props) => {
 								onClick={handleClick.bind(this, address)}
 								className={
 									location.pathname === address
-										? `${buttonClasses} btn--link-active`
+										? `${buttonClasses} ns-btn--link-active`
 										: buttonClasses
 								}>
 								{name}

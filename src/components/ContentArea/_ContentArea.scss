@@ -1,0 +1,13 @@
+.content-area {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(5, 6fr);
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		border: 1px solid black;
+		margin: 1rem;
+		padding: 1rem;
+	}
+}
