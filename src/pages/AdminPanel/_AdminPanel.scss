@@ -1,13 +1,23 @@
-.admin-panel{
-   &__form{
-     
-   }
-   
-   
-   
-   
-   &__input{
-      
-   }
+.admin-panel {
+	&__main {
+		display: flex;
+		flex-direction: column;
+	}
 
+	&__accordion-item {
+		margin: auto;
+		width: 85%;
+		border-radius: $border-radius-5;
+		overflow: hidden;
+	}
+
+	&__collapse{
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+	&__toggle {
+		margin: auto;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+	}
 }

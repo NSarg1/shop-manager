@@ -1,14 +1,15 @@
 .btn {
 	position: relative;
 	min-width: 10rem;
-	padding: 1.5rem 2rem;
+	padding: 1rem 1.5rem;
 	outline: none;
-
 	cursor: pointer;
 	overflow: hidden;
 	transition: 0.1s;
+	border-radius: $border-radius-5;
+	font-size: 1.6rem;
 
-	&--main {
+	&--header {
 		transform: translateY(-0.3rem);
 		border-radius: $border-radius-5;
 		box-shadow: $box-shadow-button;
@@ -65,7 +66,23 @@
 			}
 		}
 	}
-	
+
+	&--submit {
+		background-color: transparent;
+		border-radius: $border-radius-5;
+		height: 50%;
+		
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-image: linear-gradient(#f6d365 0%, #fda085 100%);
+			transition: 0.5s;
+		}
+	}
 
 	&__text {
 		transition: 0.4s;

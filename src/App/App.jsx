@@ -9,7 +9,7 @@ import Footer from "../layout/Footer/Footer.layout";
 // PAGES
 import Shop from "../pages/Shop/Shop.page";
 import AdminPanel from "../pages/AdminPanel/AdminPanel.page";
-import Accountant from '../pages/Accountant/Accountant.page'
+import Accountanting from '../pages/Accountanting/Accountanting.page'
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 					<Switch>
 						<Route exact path='/shop' component={Shop} />
 						<Route exact path='/admin' component={AdminPanel} />
-						<Route exact path='/accounting' component={Accountant} />
+						<Route exact path='/accounting' component={Accountanting} />
 
 					</Switch>
 				</MainContainer>

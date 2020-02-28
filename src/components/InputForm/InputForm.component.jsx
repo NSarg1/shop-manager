@@ -7,28 +7,28 @@ const InputForm = ({ className, inputStyle, label, handleChange, Type, ...otherP
 
 	let InputFormStyles;
 	if (className) {
-		InputFormStyles = `InputForm ${className}`;
+		InputFormStyles = `input-form ${className}`;
 	} else {
-		InputFormStyles = "InputForm";
+		InputFormStyles = "input-form";
 	}
 
 	let textareaStyles;
 	if (inputStyle) {
-		textareaStyles = `InputForm__textarea ${inputStyle}`;
+		textareaStyles = `input-form __textarea ${inputStyle}`;
 	} else {
-		textareaStyles = "InputForm__textarea";
+		textareaStyles = "input-form __textarea";
 	}
 	let textStyles;
 	if (inputStyle) {
-		textStyles = `InputForm__text ${inputStyle}`;
+		textStyles = `input-form__text ${inputStyle}`;
 	} else {
-		textStyles = "InputForm__text";
+		textStyles = "input-form__text";
 	}
 
 	return (
 		<div className={InputFormStyles}>
 			{label ? (
-				<label htmlFor={id} className='InputForm__label'>
+				<label htmlFor={id} className='input-form__label'>
 					{label}
 				</label>
 			) : null}

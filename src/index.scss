@@ -14,9 +14,11 @@
 @import "./components/Button/Button";
 @import "./components/Icon/Icon";
 @import "./components/InputForm/InputForm";
+@import "./components/Select/Select";
 @import "./components/Navigation/Navigation";
-@import "./components/RotatingCard/RotatingCard";
-
+@import "./components/Card/Card";
+@import "./components/InputArea/InputArea";
+@import "./components/ContentArea/ContentArea";
 
 //APP
 @import "./App/App";
@@ -28,5 +30,5 @@
 
 //Pages
 @import "./pages/Shop/Shop";
-@import "./pages/Accountant/Accountant";
+@import "./pages/Accountanting/Accountanting";
 @import "./pages/AdminPanel/AdminPanel";

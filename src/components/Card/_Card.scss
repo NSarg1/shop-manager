@@ -1,11 +1,11 @@
-.card {
-	// FUNCTIONALITY
+.ns-card {
 	position: relative;
 	perspective: 150rem;
-	-moz-perspective: 150rem;
-	position: relative;
 	height: 30rem;
 	width: 25rem;
+	margin: auto;
+	background-color: transparent;
+
 	&__side {
 		position: absolute;
 		top: 0;
@@ -18,9 +18,9 @@
 		overflow: hidden;
 		box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
 
-		&--front {
-			background-color: #fff;
-		}
+		// &--front {
+		// 	// background-color: #fff;
+		// }
 
 		&--back {
 			@include flexColumnCenter;

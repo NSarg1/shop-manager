@@ -33,17 +33,17 @@ const Header = (props) => {
 					</h1>
 					<div className='header__btn-container'>
 						<Button
-							className='grid-item grid-item--1 btn--main'
+							className='grid-item grid-item--1 btn--header'
 							onClick={handleClick.bind(this, "shop")}>
 							<span className='grid-item__text'>SHOP</span>
 						</Button>
 						<Button
-							className='grid-item grid-item--2 btn--main'
+							className='grid-item grid-item--2 btn--header'
 							onClick={handleClick.bind(this, "admin")}>
 							<span className='grid-item__text'>CONTROL</span>
 						</Button>
 						<Button
-							className='grid-item grid-item--3 btn--main'
+							className='grid-item grid-item--3 btn--header'
 							onClick={handleClick.bind(this, "accounting")}>
 							<span className='grid-item__text'>ACCOUNT</span>
 						</Button>
