@@ -23,7 +23,7 @@ a {
 input,
 textarea,
 select,
-.FileInput,
+.file-input,
 button {
 	font-family: "Roboto", sans-serif;
 	outline: none;
@@ -31,4 +31,12 @@ button {
 	resize: none;
 	background-color: #fff;
 	font-size: $font-size-body;
+}
+
+input,
+textarea,
+select,
+.file-input {
+	border: 1px solid rgba(34, 36, 38, 0.15);
+	border-radius: $border-radius-5;
 }

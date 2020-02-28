@@ -9,7 +9,6 @@ import { HeaderLayout, IconCart } from "./Header.styled";
 
 const Header = (props) => {
 	const { location, history } = props;
-	console.log(props);
 	const styles = ["header"];
 	if (location.pathname !== "/") {
 		styles.push("header--collapsed");

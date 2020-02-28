@@ -1,4 +1,5 @@
 import React from "react";
+import uniqid from "uniqid";
 
 import { Nav, NavList } from "./Navigation.styled";
 
@@ -7,13 +8,12 @@ import Button from "../Button/Button.component";
 
 const Navigation = (props) => {
 	const { history, location } = props;
-	console.log(location);
 
 	const handleClick = (address) => {
 		history.push(address);
 	};
 
-	const buttonClasses = "Navigation__link btn-link";
+	const buttonClasses = "Navigation__link btn--link";
 
 	const linksData = [
 		{ address: "/shop", name: "SHOP" },
@@ -32,12 +32,12 @@ const Navigation = (props) => {
 			<NavList className='Navigation__list'>
 				{linksData.map(({ address, name }) => {
 					return (
-						<li className='Navigation__item'>
+						<li className='Navigation__item' key={uniqid()}>
 							<Button
 								onClick={handleClick.bind(this, address)}
 								className={
 									location.pathname === address
-										? `${buttonClasses} btn-link--active`
+										? `${buttonClasses} btn--link-active`
 										: buttonClasses
 								}>
 								{name}

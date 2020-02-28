@@ -11,9 +11,12 @@
 @import "./sass/base/typography";
 
 // COMPONENTS
-@import "./components/Navigation/Navigation";
 @import "./components/Button/Button";
 @import "./components/Icon/Icon";
+@import "./components/InputForm/InputForm";
+@import "./components/Navigation/Navigation";
+@import "./components/RotatingCard/RotatingCard";
+
 
 //APP
 @import "./App/App";
@@ -27,4 +30,3 @@
 @import "./pages/Shop/Shop";
 @import "./pages/Accountant/Accountant";
 @import "./pages/AdminPanel/AdminPanel";
-

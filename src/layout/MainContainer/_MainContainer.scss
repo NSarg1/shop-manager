@@ -4,6 +4,6 @@
 	& > div {
 		animation: dynamicAppearance 2s ease forwards;
 		@include flexColumnStartCenter;
-		padding-top: 2rem;
+		padding: 2rem;
 	}
 }

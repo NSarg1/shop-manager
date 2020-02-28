@@ -1,0 +1,38 @@
+.InputForm {
+	@include flexBetween;
+
+	// font-size: 1.6rem;
+	&__label {
+		width: 8rem;
+		margin-right: 1rem;
+	}
+
+	&__text {
+		flex: 1;
+		height: 4.5rem;
+		padding: 1rem;
+		margin: 2rem 0;
+		
+
+	}
+
+	&__textarea {
+		display: block;
+		width: 100%;
+		padding: 1rem;
+		margin: 2rem 0;
+	}
+}
+
+.file-input {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+	margin: 2rem 0;
+}
+
+.select{
+
+}

@@ -38,7 +38,7 @@
 			box-shadow: $box-shadow-button--active;
 		}
 	}
-	&-link {
+	&--link {
 		background-color: transparent;
 		border-radius: $border-radius-5;
 
@@ -59,7 +59,7 @@
 			}
 		}
 
-		&--active {
+		&-active {
 			&::before {
 				height: 100%;
 			}
