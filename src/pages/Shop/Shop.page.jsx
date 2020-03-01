@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Card from "../../components/Card/Card.component";
+import { connect } from "react-redux";
 
 import { dataRef } from "../../firebase/firebase.references";
 
-const Shop = () => {
-	const [shopState, setShopState] = useState([]);
+import { addData } from "../../redux/shop/shop.actions";
 
+const Shop = ({ shopState, addData }) => {
 	useEffect(() => {
 		dataRef.get().then((snapshot) => {
 			const data = snapshot.docs.map((doc) => doc.data());
-			setShopState(data.reverse());
+			// setShopState(data.reverse());
+			addData(data.reverse());
 		});
-	}, []);
+	}, [addData]);
 
 	return (
 		<section className='shop'>
@@ -25,4 +27,12 @@ const Shop = () => {
 	);
 };
 
-export default Shop;
+const mapStateToProps = ({ shop: { shopItems } }) => ({
+	shopState: shopItems,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	addData: (data) => dispatch(addData(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);

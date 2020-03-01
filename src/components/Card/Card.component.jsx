@@ -3,6 +3,7 @@ import Button from "../Button/Button.component";
 import { Image } from "../styled-components/styled-components";
 
 const RotatingCard = (props) => {
+
 	const { price, name, imageUrl } = props;
 
 	return (
@@ -17,7 +18,7 @@ const RotatingCard = (props) => {
 					<p className='ns-card__price-only'>Only</p>
 					<p className='ns-card__price-value'>{price}$</p>
 				</div>
-				<Button className='ns-card__add-ns-btn'>ADD TO CART</Button>
+				<Button className='ns-card__add-btn'>ADD TO CART</Button>
 			</div>
 		</div>
 	);

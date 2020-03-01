@@ -7,8 +7,12 @@ import { dataRef } from "../../firebase/firebase.references";
 
 const ShopItemModal = (props) => {
 	const { shopItem, show, onHide } = props;
+
+	
 	const today = moment().format("MMMM Do YYYY, h:mm:ss");
 	const [shopItemState, setShopItemState] = useState(shopItem);
+
+
 
 	const handleChange = (event) => {
 		event.preventDefault();

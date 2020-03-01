@@ -13,13 +13,6 @@
 	color: #fda085;
 }
 
-/**---------------BOOTSTRAP RESET--------------**/
-
-dl,
-ol,
-ul {
-	margin: 0;
-}
 .form-control {
 	font-size: $font-size-body;
 }
@@ -27,3 +20,14 @@ ul {
 button:focus {
 	box-shadow: none !important;
 }
+/**---------------BOOTSTRAP RESET--------------**/
+
+
+.modal{
+	z-index: 2000 !important;
+}
+
+
+
+
+

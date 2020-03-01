@@ -5,6 +5,7 @@
 	width: 25rem;
 	margin: auto;
 	background-color: transparent;
+	user-select: none;
 
 	&__side {
 		position: absolute;
@@ -40,13 +41,17 @@
 	// CARD FRONT
 
 	&__details,
-	&__add-ns-btn {
+	&__add-btn {
 		position: absolute;
 		bottom: 3rem;
 		left: 50%;
 		transform: translateX(-50%);
 		width: 90%;
-		background-color: rgba(255, 255, 255, 0.698);
+		background-color: rgba(255, 255, 255, 0.600);
+	}
+
+	&__add-btn:hover{
+		background-color: rgba(255, 255, 255, 1);
 	}
 
 	&__details {

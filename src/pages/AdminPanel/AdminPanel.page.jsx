@@ -38,7 +38,6 @@ const AdminPanel = () => {
 			return item.active === false;
 		});
 		setIsAllSelected(isAllSelected);
-		console.log(isAllSelected);
 	}, [categoriesState]);
 
 	const handleClick = (ind) => {

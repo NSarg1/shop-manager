@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Icon = ({ className, name, hover, ...otherProps }) => {
-	const [iconName, setIconName] = useState(name);
-
+const Icon = ({ className, name, ...otherProps }) => {
 	return (
 		<div className={className ? `${className} icon` : "icon"} {...otherProps}>
-			<ion-icon
-				name={iconName}
-				onMouseEnter={setIconName.bind(this, hover)}
-				onMouseLeave={setIconName.bind(this, name)}
-			/>
+			<ion-icon name={name} />
 		</div>
 	);
 };
