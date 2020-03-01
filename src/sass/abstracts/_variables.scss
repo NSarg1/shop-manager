@@ -16,6 +16,17 @@ $box-shadow-box: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
 $box-shadow-button: 0 0.3rem 0.5rem 0.2rem rgba(0, 0, 0, 0.1);
 $box-shadow-button--active: 0 0.15rem 0.3rem 0 rgba(0, 0, 0, 0.1);
 
-
-// HEADER 
+// HEADER
 $transition-time-header: 1s;
+
+// COLORS
+
+$color-gradient-1: linear-gradient(140deg, #ffbb01, #f37335);
+// $color-gradient-2: linear-gradient(to right bottom, #e6dab9, #dd9d7d);
+// $color-gradient-3: linear-gradient(to left top, #fc4a1a, #f7b733);
+
+
+$color-edit-main: #3b5998;
+$color-edit-hover: #324b80;
+$color-remove-main: #de5246;
+$color-remove-hover: #d93729;

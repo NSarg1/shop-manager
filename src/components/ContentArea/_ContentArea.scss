@@ -1,7 +1,7 @@
 .content-area {
 	margin-top: 2rem;
 	display: grid;
-	grid-template-columns: repeat(5, 6fr);
+	grid-template-columns: repeat(4,  minmax(25rem, 1fr));
 
 	&__item {
 		display: flex;
@@ -9,5 +9,19 @@
 		border: 1px solid black;
 		margin: 1rem;
 		padding: 1rem;
+	}
+	&__info-container {
+		flex: 1 1 auto;
+		margin-right: 2rem;
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: minmax(13rem, 1fr) 2fr;
+	}
+
+	&__icon-container {
+		flex: 0 0 auto;
+		@include flexColumnEvenly;
 	}
 }

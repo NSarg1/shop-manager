@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import uniqid from "uniqid";
 //UTILITIES
-import { storage, firestore } from "../../firebase/firebase.utils";
+import { storageRef, dataRef, picPathRef } from "../../firebase/firebase.references";
 
 // COMPONENTS
 import InputForm from "../InputForm/InputForm.component";
@@ -48,10 +48,7 @@ const InputArea = () => {
 		setLoading(true);
 
 		if (imageState) {
-			const storageRef = storage.ref();
-			const uploadedPicture = storageRef
-				.child(`codics/shop/${itemState.category}/${itemState.id}.jpg`)
-				.put(imageState);
+			const uploadedPicture = storageRef.child(picPathRef(itemState)).put(imageState);
 
 			uploadedPicture.on(
 				"state_changed",
@@ -65,15 +62,10 @@ const InputArea = () => {
 				async () => {
 					const downloadURL = await uploadedPicture.snapshot.ref.getDownloadURL();
 					// Store data in server
-					await firestore
-						.collection("data")
-						.doc("codics")
-						.collection("shop")
-						.doc(itemState.id)
-						.set({
-							...itemState,
-							imageUrl: downloadURL,
-						});
+					await dataRef.doc(itemState.id).set({
+						...itemState,
+						imageUrl: downloadURL,
+					});
 
 					/*****************Set data to initial*******************/
 					setProgress(0);
@@ -157,7 +149,11 @@ const InputArea = () => {
 					required
 				/>
 				<div className='input-area__submit'>
-					<ButtonWithSpinner block variant='outline-dark' type='submit' isLoading={loading}>
+					<ButtonWithSpinner
+						block
+						variant='outline-dark'
+						type='submit'
+						isLoading={loading}>
 						Sumbit
 					</ButtonWithSpinner>
 				</div>

@@ -5,18 +5,19 @@ import { Accordion, Card, Button } from "react-bootstrap";
 import InputArea from "../../components/InputArea/InputArea.component";
 import ContentArea from "../../components/ContentArea/ContentArea.component";
 
-import { firestore } from "../../firebase/firebase.utils";
+import { dataRef } from "../../firebase/firebase.references";
 
 const AdminPanel = () => {
 	const [fetchedData, setFetchedData] = useState([]);
+
+	const [isAllSelected, setIsAllSelected] = useState(false);
 	const [categoriesState, setCategoriesState] = useState([
-		{ name: "hats", active: false },
+		{ name: "hats", active: true },
 		{ name: "jackets", active: false },
 		{ name: "sneakers", active: false },
 	]);
 
 	useEffect(() => {
-		const dataRef = firestore.collection(`data/codics/shop`);
 		const unsubscribeFromSnapshot = dataRef
 			.where(
 				"category",
@@ -25,11 +26,19 @@ const AdminPanel = () => {
 			)
 			.onSnapshot(async (snapshot) => {
 				const data = snapshot.docs.map((doc) => doc.data());
-				setFetchedData(data);
+				setFetchedData(data.reverse());
 			});
 		return () => {
 			unsubscribeFromSnapshot();
 		};
+	}, [categoriesState]);
+
+	useEffect(() => {
+		const isAllSelected = !categoriesState.find((item) => {
+			return item.active === false;
+		});
+		setIsAllSelected(isAllSelected);
+		console.log(isAllSelected);
 	}, [categoriesState]);
 
 	const handleClick = (ind) => {
@@ -67,7 +76,10 @@ const AdminPanel = () => {
 			<div className='admin-panel__main'>
 				<Accordion>
 					<div className='admin-panel__accordion-item'>
-						<Accordion.Toggle as={Card.Header} eventKey='0' className='admin-panel__toggle'>
+						<Accordion.Toggle
+							as={Card.Header}
+							eventKey='0'
+							className='admin-panel__toggle'>
 							Add new items
 						</Accordion.Toggle>
 						<Accordion.Collapse eventKey='0' className='admin-panel__collapse'>
@@ -79,12 +91,8 @@ const AdminPanel = () => {
 					<Button
 						onClick={selectAllCategories}
 						variant='outline-dark'
-						active={
-							!categoriesState.find((item) => {
-								return item.active === false;
-							})
-						}>
-						SELECT ALL CATEGORIES
+						active={isAllSelected}>
+						ALL CATEGORIES
 					</Button>
 					{categoriesState.map((btn, ind) => {
 						return (

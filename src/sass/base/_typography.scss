@@ -11,6 +11,7 @@ h1 {
 	letter-spacing: 0.2rem;
 	text-transform: uppercase;
 	// margin: 0 auto 1rem auto;
+	@include colorGradient($color-gradient-1);
 }
 
 h2 {
@@ -18,8 +19,18 @@ h2 {
 	margin: 2rem 0;
 }
 
+h3 {
+	font-size: 2rem;
+	margin: 1rem 0;
+}
+
 p {
 	text-align: justify;
+}
+
+label {
+	font-weight: 500;
+	margin: 0;
 }
 
 .title {

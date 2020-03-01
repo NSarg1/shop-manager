@@ -1,8 +1,26 @@
 .icon {
 	cursor: pointer;
 	transition: 0.2s;
-	padding: 0.5rem;
+	@include flexCenter;
+	transition: 0.4s;
 	font-size: 2.5rem;
+
+	&--edit {
+		color: $color-edit-main;
+		transform: scale(0.9);
+		&:hover {
+			transform: scale(1);
+			color: $color-edit-hover;
+		}
+	}
+	&--remove {
+		transform: scale(0.9);
+		color: $color-remove-main;
+		&:hover {
+			transform: scale(1);
+			color: $color-remove-hover;
+		}
+	}
 }
 
 // ion-icon {

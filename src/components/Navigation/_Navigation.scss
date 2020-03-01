@@ -1,6 +1,7 @@
 .Navigation {
 	animation: dynamicAppearance $transition-time-header ease forwards;
 	@include flexBetween;
+	align-items: center;
 	width: 114rem;
 	border-bottom-left-radius: $border-radius-3;
 	border-bottom-right-radius: $border-radius-3;
@@ -12,6 +13,7 @@
 
 	&__item {
 		margin-right: 2rem;
+		flex-shrink: 0;
 	}
 	// &__link {
 	// }

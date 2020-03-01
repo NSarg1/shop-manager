@@ -11,9 +11,10 @@ const Select = ({ children, onChange, defaultOption, ...otherProps }) => {
 				style={{ color: `${defaultOption ? "#000" : "#8C8985" /*Gray color*/}` }}>
 				{children}
 			</select>
-			<Icon name='chevron-down' className='select__icon' />
+			<Icon name='chevron-down-outline' className='select__icon' />
 		</div>
 	);
 };
 
 export default Select;
+
