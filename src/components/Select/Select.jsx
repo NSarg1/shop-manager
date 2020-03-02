@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../Icon/Icon.component";
+import Icon from "../icon/Icon.component";
 
 const Select = ({ children, onChange, defaultOption, ...otherProps }) => {
 	return (

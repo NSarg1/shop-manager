@@ -1,14 +1,21 @@
 import React from "react";
 
 //COMPONENTS
-import Navigation from "../../components/Navigation/Navigation.component";
-import Button from "../../components/Button/Button.component";
+import Navigation from "../../components/navigation/Navigation.component";
+import Button from "../../components/button/Button.component";
+import CartDropdown from "../../components/cart-dropdown/CartDropdown.component";
+
+import CartIcon from "../../components/cart-icon/cart-icon.component";
+
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
 // STYLED COMPONENTS
-import { HeaderLayout, IconCart } from "./Header.styled";
 
 const Header = (props) => {
-	const { location, history } = props;
+	const { location, history, hidden } = props;
 	const styles = ["header"];
 	if (location.pathname !== "/") {
 		styles.push("header--collapsed");
@@ -19,11 +26,7 @@ const Header = (props) => {
 	};
 
 	return (
-		<HeaderLayout className={styles.join(" ")}>
-			{location.pathname === "/shop" ? (
-				<IconCart name='cart-outline' className='header__cart' />
-			) : null}
-
+		<header className={styles.join(" ")}>
 			{location.pathname !== "/" ? (
 				<Navigation {...props} />
 			) : (
@@ -50,8 +53,15 @@ const Header = (props) => {
 					</div>
 				</div>
 			)}
-		</HeaderLayout>
+			{location.pathname === "/shop" ? <CartIcon /> : null}
+
+			{hidden ? null : <CartDropdown />}
+		</header>
 	);
 };
 
-export default Header;
+const mapStateToProps = createStructuredSelector({
+	hidden: selectCartHidden,
+});
+
+export default connect(mapStateToProps)(Header);

@@ -3,7 +3,7 @@ import uniqid from "uniqid";
 
 import { Nav, NavList } from "./Navigation.styled";
 
-import Button from "../Button/Button.component";
+import Button from "../button/Button.component";
 // import Icon from "../../components/Icon/Icon.component";
 
 const Navigation = (props) => {
@@ -13,7 +13,7 @@ const Navigation = (props) => {
 		history.push(address);
 	};
 
-	const buttonClasses = "Navigation__link ns-btn--link";
+	const buttonClasses = "navigation__link ns-btn--link";
 
 	const linksData = [
 		{ address: "/shop", name: "SHOP" },
@@ -22,17 +22,17 @@ const Navigation = (props) => {
 	];
 
 	return (
-		<Nav className='Navigation'>
+		<Nav className='navigation'>
 			<div className='Header__logo'>
 				<Button onClick={handleClick.bind(this, "/")} className={buttonClasses}>
 					SHOPIFY
 				</Button>
 			</div>
 
-			<NavList className='Navigation__list'>
+			<NavList className='navigation__list'>
 				{linksData.map(({ address, name }) => {
 					return (
-						<li className='Navigation__item' key={uniqid()}>
+						<li className='navigation__item' key={uniqid()}>
 							<Button
 								onClick={handleClick.bind(this, address)}
 								className={

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Card from "../../components/Card/Card.component";
+import ShopCard from "../../components/shop-card/ShopCard.component";
 import { connect } from "react-redux";
 
 import { dataRef } from "../../firebase/firebase.references";
@@ -19,8 +19,8 @@ const Shop = ({ shopState, addData }) => {
 		<section className='shop'>
 			<h2>Shop what you want and how much you want</h2>
 			<div className='shop__collection'>
-				{shopState.map(({ id, ...otherProps }) => {
-					return <Card key={id} {...otherProps} />;
+				{shopState.map((item) => {
+					return <ShopCard key={item.id} item={item} />;
 				})}
 			</div>
 		</section>

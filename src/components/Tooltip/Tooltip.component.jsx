@@ -9,13 +9,13 @@ const CustomTooltip = (props) => {
 	if (show === false) {
 		return (
 			<OverlayTrigger
+				{...props}
 				placement='top'
 				overlay={
 					<Tooltip id='popover-basic'>
 						<Image imageUrl={shopItem.imageUrl} width='18rem' height='20rem' />
 					</Tooltip>
-				}
-				{...props}>
+				}>
 				{children}
 			</OverlayTrigger>
 		);

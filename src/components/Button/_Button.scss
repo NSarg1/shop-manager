@@ -1,13 +1,14 @@
 .ns-btn {
 	position: relative;
-	min-width: 10rem;
-	padding: 1rem 1.5rem;
+	min-width: 12rem;
+	// padding: 1rem 1.5rem;
 	outline: none;
 	cursor: pointer;
 	overflow: hidden;
 	transition: 0.1s;
 	border-radius: $border-radius-5;
 	font-size: 1.6rem;
+	flex-shrink: 0;
 
 	&--header {
 		transform: translateY(-0.3rem);
@@ -84,8 +85,10 @@
 	}
 
 	&__text {
+		display: inline-block;
 		transition: 0.4s;
 		position: relative;
 		z-index: 100;
+		margin: 1rem 1.5rem;
 	}
 }

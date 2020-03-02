@@ -6,10 +6,10 @@ import uniqid from "uniqid";
 import { storageRef, dataRef, picPathRef } from "../../firebase/firebase.references";
 
 // COMPONENTS
-import InputForm from "../InputForm/InputForm.component";
-import Select from "../Select/Select";
-import FileInput from "../InputForm/FileInput.component";
-import ButtonWithSpinner from "../Button/ButtonWithSpinner";
+import InputForm from "../input-form/InputForm.component";
+import Select from "../select/Select";
+import FileInput from "../input-form/FileInput.component";
+import ButtonWithSpinner from "../button/ButtonWithSpinner";
 
 const InputArea = () => {
 	const today = moment().format("MMMM Do YYYY, h:mm:ss");

@@ -1,12 +1,7 @@
 .main-container {
 	flex: 1 1 auto;
 	overflow: auto;
-	//Hide scrollbar
-	-ms-overflow-style: none;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	scrollbar-width: none;
+	@include hideScrollbar;
 
 	& > section {
 		animation: dynamicAppearance 2s ease forwards;

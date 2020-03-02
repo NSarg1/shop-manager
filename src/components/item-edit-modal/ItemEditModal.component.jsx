@@ -1,18 +1,16 @@
+//LIBRARIES
 import React, { useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
-
 import moment from "moment";
 
+//COMPONENTS
+import { Modal, Button, Form } from "react-bootstrap";
 import { dataRef } from "../../firebase/firebase.references";
 
-const ShopItemModal = (props) => {
+const ItemEditModal = (props) => {
 	const { shopItem, show, onHide } = props;
 
-	
 	const today = moment().format("MMMM Do YYYY, h:mm:ss");
 	const [shopItemState, setShopItemState] = useState(shopItem);
-
-
 
 	const handleChange = (event) => {
 		event.preventDefault();
@@ -37,12 +35,7 @@ const ShopItemModal = (props) => {
 	};
 
 	return (
-		<Modal
-			size='lg'
-			aria-labelledby='contained-modal-title-vcenter'
-			centered
-			show={show}
-			onHide={onHide}>
+		<Modal centered show={show} onHide={onHide}>
 			<Modal.Header closeButton>
 				<h3>Edit your shop item</h3>
 			</Modal.Header>
@@ -89,4 +82,4 @@ const ShopItemModal = (props) => {
 	);
 };
 
-export default ShopItemModal;
+export default ItemEditModal;

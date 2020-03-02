@@ -142,10 +142,17 @@ ORDER: Base + typography > general layout + grid > page layout > components
 	transform: translate(-50%, -50%);
 }
 
-
-
 @mixin colorGradient($color-gradient) {
 	background-image: $color-gradient;
 	-webkit-background-clip: text;
 	color: transparent;
+}
+
+@mixin hideScrollbar {
+	//Hide scrollbar
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	scrollbar-width: none;
 }

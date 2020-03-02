@@ -1,15 +1,15 @@
 import React from "react";
-import Header from "../layout/Header/Header.layout";
 import { Switch, Route, HashRouter } from "react-router-dom";
 
 // LAYOUT
-import MainContainer from "../layout/MainContainer/MainContainer.layout";
-import Footer from "../layout/Footer/Footer.layout";
+import Header from "../layout/header/Header.layout";
+import MainContainer from "../layout/main-container/MainContainer.layout";
+import Footer from "../layout/footer/Footer.layout";
 
 // PAGES
-import Shop from "../pages/Shop/Shop.page";
-import AdminPanel from "../pages/AdminPanel/AdminPanel.page";
-import Accountanting from '../pages/Accountanting/Accountanting.page'
+import Shop from "../pages/shop/Shop.page";
+import AdminPanel from "../pages/admin-panel/AdminPanel.page";
+import Accountanting from '../pages/accountanting/Accountanting.page'
 
 
 function App() {

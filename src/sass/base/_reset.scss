@@ -42,3 +42,30 @@ textarea,
 	border-radius: $border-radius-5;
 }
 
+/**--------------- BOOTSTRAP CUSTOM STYLES --------------**/
+
+.btn {
+	box-shadow: none !important;
+	font-size: 1.6rem;
+	padding: 1rem 2rem;
+	min-width: 15rem;
+}
+
+.spinner-grow {
+	width: 4rem;
+	height: 4rem;
+	color: #fda085;
+}
+
+.form-control {
+	font-size: $font-size-body;
+}
+
+button:focus {
+	box-shadow: none !important;
+}
+/**---------------BOOTSTRAP RESET--------------**/
+
+.modal {
+	z-index: 2000 !important;
+}

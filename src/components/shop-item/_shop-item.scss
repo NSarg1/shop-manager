@@ -1,15 +1,10 @@
-.content-area {
-	margin-top: 2rem;
-	display: grid;
-	grid-template-columns: repeat(4, minmax(25rem, 1fr));
-	gap: 1rem;
-
-	&__item {
-		display: flex;
-		justify-content: space-between;
-		border: 1px solid black;
-		padding: 1rem;
-	}
+.shop-item {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+    padding: 1rem;
+    
+    
 	&__info-container {
 		flex: 1 1 auto;
 		margin-right: 2rem;

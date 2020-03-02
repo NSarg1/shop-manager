@@ -1,4 +1,5 @@
 //Abstracts
+@import "./sass/reset";
 @import "./sass/abstracts/variables";
 @import "./sass/base/reset";
 @import "./sass/abstracts/mixins";
@@ -6,31 +7,33 @@
 
 //Base
 @import "./sass/base/reset";
-@import "./sass/base/reset-bootstrap";
 @import "./sass/base/base";
 @import "./sass/base/utilities";
 @import "./sass/base/typography";
 
 // COMPONENTS
-@import "./components/Button/Button";
-@import "./components/Icon/Icon";
-@import "./components/InputForm/InputForm";
-@import "./components/Select/Select";
-@import "./components/Navigation/Navigation";
-@import "./components/Card/Card";
-@import "./components/InputArea/InputArea";
-@import "./components/ContentArea/ContentArea";
-@import "./components/Dropdown/Dropdown";
+@import "./components/button/button";
+@import "./components/icon/icon";
+@import "./components/navigation/navigation";
+@import "./components/input-area-admin/input-area";
+@import "./components/input-form/input-form";
+@import "./components/select/select";
+@import "./components/shop-card/shop-card";
+@import "./components/shop-item/shop-item";
+@import "./components/admin-content-area/content-area";
+@import "./components/cart-dropdown/cart-dropdown";
+@import "./components/cart-item/cart-item.styles";
+@import "./components/cart-icon/cart-icon.styles";
 
 //APP
 @import "./App/App";
 
 //LAYOUT
-@import "./layout/Header/Header";
-@import "./layout/MainContainer/MainContainer";
-@import "./layout/Footer/Footer";
+@import "./layout/header/header";
+@import "./layout/main-container/main-container";
+@import "./layout/footer/footer";
 
 //Pages
-@import "./pages/Shop/Shop";
-@import "./pages/Accountanting/Accountanting";
-@import "./pages/AdminPanel/AdminPanel";
+@import "./pages/shop/shop";
+@import "./pages/accountanting/accountanting";
+@import "./pages/admin-panel/admin-panel";

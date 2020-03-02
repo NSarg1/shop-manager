@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 
-import InputArea from "../../components/InputArea/InputArea.component";
-import ContentArea from "../../components/ContentArea/ContentArea.component";
+import InputArea from "../../components/input-area-admin/InputArea.component";
+import ContentArea from "../../components/admin-content-area/ContentArea.component";
 
 import { dataRef } from "../../firebase/firebase.references";
 
@@ -104,16 +104,6 @@ const AdminPanel = () => {
 							</Button>
 						);
 					})}
-
-					{/* <Button variant='outline-primary' active={false}>
-						Hats
-					</Button>
-					<Button variant='outline-primary' active={false}>
-						Jackets
-					</Button>
-					<Button variant='outline-primary' active={false}>
-						Sneakers
-					</Button> */}
 				</div>
 				<ContentArea data={fetchedData} />
 			</div>

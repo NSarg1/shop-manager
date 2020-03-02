@@ -12,10 +12,5 @@
 		rgba(255, 215, 165, 1) 48.5%
 	);
 
-	//Hide scrollbar
-	-ms-overflow-style: none;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	scrollbar-width: none;
+	@include hideScrollbar;
 }
