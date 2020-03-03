@@ -1,56 +1,73 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+//LIBRARIES
+import React, { useEffect, useRef, useCallback } from "react";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
 
+//COMPONENTS
 import Button from "../button/Button.component";
 import CartItem from "../cart-item/cart-item.component";
-import { selectCartItems, selectCartHidden } from "../../redux/cart/cart.selectors";
-import { toggleCartHidden } from "../../redux/cart/cart.actions.js";
 
-const CartDropdown = ({ cartItems, dispatch }) => {
-	const dropdownRef = useRef({});
-	const [dropdownNode, setDropdownNode] = useState({});
+//SELECTORS
+import { selectCartItems } from "../../redux/cart/cart.selectors";
+
+//ACTIONS
+import { toggleCartHidden, clearAllItemsFromCart } from "../../redux/cart/cart.actions.js";
+
+// FIRESTORE REFERENCES
+import { dataRef } from "../../firebase/firebase.references";
+
+const CartDropdown = ({ cartItems, toggleCartHidden, clearAllItemsFromCart }) => {
+	const node = useRef();
+	console.log(cartItems[0]);
+
+	const handleCheckout = async () => {
+		await cartItems.map((item) => {
+			return dataRef.doc(item.id).update({ ...item, action: "buy" });
+		});
+		clearAllItemsFromCart();
+		toggleCartHidden(true)
+	};
 
 	const handleClick = useCallback(
 		(event) => {
-			if (dropdownNode.contains(event.target)) return;
-			dispatch(toggleCartHidden());
+			if (node.current.contains(event.target)) return; // Handle clicks only outside the node
+			toggleCartHidden(false);
 		},
-		[dispatch, dropdownNode]
+		[toggleCartHidden]
 	);
-
 	useEffect(() => {
-		setDropdownNode(dropdownRef.current);
-
-		document.addEventListener("click", handleClick);
+		document.addEventListener("mousedown", handleClick);
 		return () => {
-			document.removeEventListener("click", handleClick);
+			// CLEAR EVENT LISTENER
+			document.removeEventListener("mousedown", handleClick);
 		};
-	}, [dispatch, handleClick]);
+	}, [handleClick]);
 
 	return (
-		<div className='cart-dropdown' onClick={handleClick} ref={dropdownRef}>
+		<div className='cart-dropdown' ref={node}>
 			<div className='cart-items'>
 				{cartItems.length ? (
-					cartItems.map((cartItem) => <CartItem key={cartItem.id} item={cartItem} />)
+					cartItems.map((cartItem) => {
+						console.log(cartItem);
+						return <CartItem key={cartItem.id} item={cartItem} />;
+					})
 				) : (
 					<span className='empty-message'>Your cart is empty</span>
 				)}
 			</div>
-			<Button
-				onClick={() => {
-					dispatch(toggleCartHidden());
-				}}>
-				GO TO CHECKOUT
-			</Button>
+			<Button onClick={handleCheckout}>GO TO CHECKOUT</Button>
 		</div>
 	);
 };
 
 const mapStateToProps = createStructuredSelector({
 	cartItems: selectCartItems,
-	hidden: selectCartHidden,
 });
 
-export default withRouter(connect(mapStateToProps)(CartDropdown));
+const mapDispatchToProps = (dispatch) => ({
+	toggleCartHidden: () => dispatch(toggleCartHidden()),
+	clearAllItemsFromCart: () => dispatch(clearAllItemsFromCart()),
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CartDropdown));

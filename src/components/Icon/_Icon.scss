@@ -1,9 +1,13 @@
 .icon {
-	cursor: pointer;
 	transition: 0.2s;
 	@include flexCenter;
 	transition: 0.4s;
 	font-size: 2.5rem;
+	
+
+	&__item {
+		cursor: pointer;
+	}
 
 	&--edit {
 		color: $color-edit-main;

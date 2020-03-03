@@ -1,10 +1,12 @@
 //LIBRARIES
 import React, { useState, useEffect } from "react";
-import { Accordion, Card, Button } from "react-bootstrap";
 
+//COMPONENTS
+import { Accordion, Card, Button } from "react-bootstrap";
 import InputArea from "../../components/input-area-admin/InputArea.component";
 import ContentArea from "../../components/admin-content-area/ContentArea.component";
 
+// FIRESTORE REFERENCES
 import { dataRef } from "../../firebase/firebase.references";
 
 const AdminPanel = () => {

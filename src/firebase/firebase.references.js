@@ -1,7 +1,5 @@
 import { firestore, storage } from "./firebase.utils";
 
-
-
 export const storageRef = storage.ref();
 
 export const dataRef = firestore.collection("data/codics/shop");

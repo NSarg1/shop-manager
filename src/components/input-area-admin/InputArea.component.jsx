@@ -17,7 +17,7 @@ const InputArea = () => {
 		category: "",
 		name: "",
 		imageUrl: "",
-		quantity: "",
+		remainedQuantity: "",
 		price: "",
 		id: uniqid(),
 		lastChanged: today,
@@ -75,7 +75,7 @@ const InputArea = () => {
 						category: "",
 						name: "",
 						imageUrl: "",
-						quantity: "",
+						remainedQuantity: "",
 						price: "",
 						id: uniqid(),
 						lastChanged: today,
@@ -142,10 +142,10 @@ const InputArea = () => {
 				/>
 				<InputForm
 					handleChange={handleChange}
-					value={itemState.quantity}
-					placeholder='Quantity'
+					value={itemState.remainedQuantity}
+					placeholder='Remained quantity'
 					type='number'
-					name='quantity'
+					name='remainedQuantity'
 					required
 				/>
 				<div className='input-area__submit'>

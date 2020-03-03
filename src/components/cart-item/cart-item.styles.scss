@@ -8,6 +8,10 @@
     width: 30%;
   }
 
+  &__icon{
+   align-items: flex-start;
+  }
+
   .item-details {
     width: 70%;
     display: flex;

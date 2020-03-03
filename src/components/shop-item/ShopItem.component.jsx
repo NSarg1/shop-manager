@@ -54,7 +54,7 @@ const ShopItem = (props) => {
 						<span> {shopItem.price}</span>
 					</div>
 					<div className='shop-item__info'>
-						<label>Quantity:</label> <span> {shopItem.quantity}</span>
+						<label>Quantity:</label> <span> {shopItem.remainedQuantity}</span>
 					</div>
 				</div>
 				<div className='shop-item__icon-container'>

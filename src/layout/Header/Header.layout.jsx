@@ -1,4 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+//Actions
+import { toggleCartHidden } from "../../redux/cart/cart.actions";
+
+//SELECTORS
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
 //COMPONENTS
 import Navigation from "../../components/navigation/Navigation.component";
@@ -7,16 +15,12 @@ import CartDropdown from "../../components/cart-dropdown/CartDropdown.component"
 
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-
-import { selectCartHidden } from "../../redux/cart/cart.selectors";
-
 // STYLED COMPONENTS
 
 const Header = (props) => {
 	const { location, history, hidden } = props;
 	const styles = ["header"];
+
 	if (location.pathname !== "/") {
 		styles.push("header--collapsed");
 	}
@@ -53,15 +57,17 @@ const Header = (props) => {
 					</div>
 				</div>
 			)}
-			{location.pathname === "/shop" ? <CartIcon /> : null}
-
-			{hidden ? null : <CartDropdown />}
+			{location.pathname === "/shop" ? <CartIcon location={location} /> : null}
+			{hidden ? null : <CartDropdown hidden={hidden} />}
 		</header>
 	);
 };
-
 const mapStateToProps = createStructuredSelector({
 	hidden: selectCartHidden,
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+	toggleCartHidden: () => dispatch(toggleCartHidden()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

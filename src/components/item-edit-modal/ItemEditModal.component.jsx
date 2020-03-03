@@ -41,33 +41,36 @@ const ItemEditModal = (props) => {
 			</Modal.Header>
 			<Modal.Body>
 				<Form.Group>
-					<Form.Label>Shop item name</Form.Label>
-					<Form.Control
-						onChange={handleChange}
-						value={shopItemState.name}
-						type='text'
-						placeholder='Shop item name'
-						name='name'
-					/>
-					<br />
-					<Form.Label>Shop item price </Form.Label>
-					<Form.Control
-						onChange={handleChange}
-						value={shopItemState.price}
-						type='number'
-						placeholder='Shop item price'
-						name='price'
-					/>
-					<br />
-					<Form.Label>Shop item quantity</Form.Label>
-					<Form.Control
-						onChange={handleChange}
-						value={shopItemState.quantity}
-						type='number'
-						placeholder='Shop item quantity'
-						name='quantity'
-					/>
-					<br />
+					<div className='u-margin-bottom-1'>
+						<Form.Label className='u-margin-bottom-1'>Shop item name</Form.Label>
+						<Form.Control
+							onChange={handleChange}
+							value={shopItemState.name}
+							type='text'
+							placeholder='Shop item name'
+							name='name'
+						/>
+					</div>
+					<div className='u-margin-bottom-1'>
+						<Form.Label className='u-margin-bottom-1'>Shop item price </Form.Label>
+						<Form.Control
+							onChange={handleChange}
+							value={shopItemState.price}
+							type='number'
+							placeholder='Shop item price'
+							name='price'
+						/>
+					</div>
+					<div className='u-margin-bottom-1'>
+						<Form.Label className='u-margin-bottom-1'>Shop item quantity</Form.Label>
+						<Form.Control
+							onChange={handleChange}
+							value={shopItemState.remainedQuantity}
+							type='number'
+							placeholder='Shop item quantity'
+							name='remainedQuantity'
+						/>
+					</div>
 				</Form.Group>
 			</Modal.Body>
 			<Modal.Footer>
