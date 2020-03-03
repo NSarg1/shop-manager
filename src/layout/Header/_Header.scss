@@ -8,13 +8,17 @@
 	padding: 0 3rem;
 	transition: $transition-time-header ease-in-out;
 
+	@include respond(600) {
+		padding: 0 1.5rem;
+	}
+
 	&--collapsed {
 		@include flexBetween;
 		flex: 0 0 8rem;
 	}
 
 	&__logo {
-		margin-right: 2rem;
+		flex: 0 0;
 	}
 
 	&__cart {

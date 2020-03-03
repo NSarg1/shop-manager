@@ -5,6 +5,10 @@
 	// font-size: 1.6rem;
 	&__label {
 		min-width: 8rem;
+		
+		@include respond(600) {
+			min-width: 5rem;
+		}
 	}
 
 	&__text {

@@ -6,7 +6,7 @@
 
 	// }
 
-	&__submit{
+	&__submit {
 		overflow: hidden;
 	}
 
@@ -18,5 +18,11 @@
 		gap: 1rem;
 		align-items: center;
 		height: 100%;
+
+		
+		@include respond(600) {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, 1fr);
+		}
 	}
 }

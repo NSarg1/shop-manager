@@ -15,6 +15,9 @@
 	&__item {
 		margin-right: 2rem;
 		flex-shrink: 0;
+		@include respond(600) {
+			margin-right: 1rem;
+		}
 	}
 	&__link {
 		flex-shrink: 0;

@@ -2,9 +2,17 @@
 	&__collection {
 		margin-top: 2.5rem;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		grid-gap: 1.5rem 2.5rem;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 2rem 2rem;
 		justify-content: center;
 		align-items: center;
+
+	
+		@include respond(900) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@include respond(600) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }

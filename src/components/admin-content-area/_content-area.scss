@@ -3,4 +3,11 @@
 	display: grid;
 	grid-template-columns: repeat(4, minmax(25rem, 1fr));
 	gap: 1rem;
+
+	@include respond(900) {
+		grid-template-columns: repeat(3, minmax(20rem, 1fr));
+	}
+	@include respond(600) {
+		grid-template-columns: repeat(2, minmax(20rem, 1fr));
+	}
 }

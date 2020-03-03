@@ -1,7 +1,7 @@
 .cart-dropdown {
 	position: absolute;
 	top: 7rem;
-	right:4rem;
+	right: 4rem;
 	width: 24rem;
 	height: 34rem;
 	display: flex;
@@ -11,13 +11,18 @@
 	background: $color-gradient-3;
 	z-index: 5;
 
+	@include respond(600) {
+		top: 8rem;
+		right: 1rem;
+	}
+
 	.empty-message {
-		font-size: 18px;
-		margin: 50px auto;
+		font-size: 1.8rem;
+		margin: 5rem auto;
 	}
 
 	.cart-items {
-		height: 240px;
+		height: 24rem;
 		display: flex;
 		flex-direction: column;
 		overflow: auto;

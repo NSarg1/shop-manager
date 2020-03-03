@@ -16,6 +16,14 @@
 		justify-content: space-around;
 		width: 70%;
 		margin: 2rem auto;
+
+		@include respond(900) {
+			width: 85%;
+		}
+		@include respond(600) {
+			grid-template-columns: repeat(2, minmax(20rem, 1fr));
+			width: 98%;
+		}
 	}
 
 	&__collapse {

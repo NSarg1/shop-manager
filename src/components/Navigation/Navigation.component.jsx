@@ -4,7 +4,11 @@ import uniqid from "uniqid";
 import { Nav, NavList } from "./Navigation.styled";
 
 import Button from "../button/Button.component";
+
 // import Icon from "../../components/Icon/Icon.component";
+
+import Logo from "../../sass/assets/logo.png";
+import { Image } from "../styled-components/styled-components";
 
 const Navigation = (props) => {
 	const { history, location } = props;
@@ -23,10 +27,8 @@ const Navigation = (props) => {
 
 	return (
 		<Nav className='navigation'>
-			<div className='Header__logo'>
-				<Button onClick={handleClick.bind(this, "/")} className={buttonClasses}>
-					SHOPIFY
-				</Button>
+			<div className='Header__logo' onClick={handleClick.bind(this, "/")}>
+				<Image imageUrl={Logo} height='3rem' width='8rem' />
 			</div>
 
 			<NavList className='navigation__list'>

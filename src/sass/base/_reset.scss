@@ -49,6 +49,14 @@ textarea,
 	font-size: 1.6rem;
 	padding: 1rem 2rem;
 	min-width: 15rem;
+
+	@include respond(600) {
+		min-width: 10rem;
+		&-outline-dark:hover {
+			background-color: initial;
+			color: initial;
+		}
+	}
 }
 
 .spinner-grow {
