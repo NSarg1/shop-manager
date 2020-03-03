@@ -1,10 +1,11 @@
 //LIBRARIES
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
 
 //REFERENCES
 import { dataRef } from "../../firebase/firebase.references";
 
+//COMPONENTS
+import { Accordion, Card } from "react-bootstrap";
 import ShopItemAccounting from "../../components/shop-item-accounting/ShopItemAccounting.component";
 
 const Accountanting = () => {
@@ -35,30 +36,34 @@ const Accountanting = () => {
 		<section className='accountanting'>
 			<h2>Do your calculations</h2>
 
-			{Object.keys(data).map((key, idx) => {
-				return (
-					<div key={idx}>
-						<h3>
-							{key.toUpperCase()} - Overall:{" "}
-							{data[key].reduce((previous, current) => {
-								return previous + current.sold;
-							}, 0)}
-							$
-						</h3>
-						<div className='content-area'>
-							{data[key].map((item) => {
-								return <ShopItemAccounting key={item.id} shopItem={item} />;
-							})}
+			<Accordion defaultActiveKey={0}>
+				{Object.keys(data).map((key, idx) => {
+					return (
+						<div key={idx}>
+							<Accordion.Toggle
+								key={idx}
+								as={Card.Header}
+								eventKey={idx}
+								className='admin-panel__toggle'>
+								{key.toUpperCase()} - Overall:{" "}
+								{data[key].reduce((previous, current) => {
+									return previous + current.sold;
+								}, 0)}
+								$
+							</Accordion.Toggle>
+							<Accordion.Collapse eventKey={idx} className='admin-panel__collapse'>
+								<div className='content-area'>
+									{data[key].map((item) => {
+										return <ShopItemAccounting key={item.id} shopItem={item} />;
+									})}
+								</div>
+							</Accordion.Collapse>
 						</div>
-					</div>
-				);
-			})}
+					);
+				})}
+			</Accordion>
 		</section>
 	);
 };
 
-// const mapStateToProps = ({}) => ({});
-
-const mapDispatchToProps = (dispatch) => ({});
-
-export default connect(null, mapDispatchToProps)(Accountanting);
+export default Accountanting;
