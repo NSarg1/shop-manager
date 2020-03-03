@@ -17,8 +17,8 @@ const InputArea = () => {
 		category: "",
 		name: "",
 		imageUrl: "",
-		remainedQuantity: "",
-		price: "",
+		remainedQuantity: 0,
+		price: 0,
 		id: uniqid(),
 		lastChanged: today,
 	});
@@ -75,8 +75,8 @@ const InputArea = () => {
 						category: "",
 						name: "",
 						imageUrl: "",
-						remainedQuantity: "",
-						price: "",
+						remainedQuantity: 0,
+						price: 0,
 						id: uniqid(),
 						lastChanged: today,
 					});

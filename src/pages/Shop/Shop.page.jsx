@@ -25,6 +25,7 @@ const Shop = ({ shopState, addData, toggleCartHidden }) => {
 			<h2>Shop what you want and how much you want</h2>
 			<div className='shop__collection'>
 				{shopState.map((item) => {
+					// eslint-disable-next-line
 					if (!item.id) return;
 					return <ShopCard key={item.id} item={item} />;
 				})}

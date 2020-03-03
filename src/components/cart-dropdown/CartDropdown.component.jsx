@@ -19,14 +19,13 @@ import { dataRef } from "../../firebase/firebase.references";
 
 const CartDropdown = ({ cartItems, toggleCartHidden, clearAllItemsFromCart }) => {
 	const node = useRef();
-	console.log(cartItems[0]);
 
 	const handleCheckout = async () => {
 		await cartItems.map((item) => {
-			return dataRef.doc(item.id).update({ ...item, action: "buy" });
+			return dataRef.doc(item.id).update({ ...item, type: "buy" });
 		});
 		clearAllItemsFromCart();
-		toggleCartHidden(true)
+		toggleCartHidden(true);
 	};
 
 	const handleClick = useCallback(
@@ -49,7 +48,6 @@ const CartDropdown = ({ cartItems, toggleCartHidden, clearAllItemsFromCart }) =>
 			<div className='cart-items'>
 				{cartItems.length ? (
 					cartItems.map((cartItem) => {
-						console.log(cartItem);
 						return <CartItem key={cartItem.id} item={cartItem} />;
 					})
 				) : (

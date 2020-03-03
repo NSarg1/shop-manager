@@ -13,7 +13,7 @@ const CustomTooltip = (props) => {
 				placement='top'
 				overlay={
 					<Tooltip id='popover-basic'>
-						<Image imageUrl={shopItem.imageUrl} width='18rem' height='20rem' />
+						<Image imageUrl={shopItem.imageUrl} width='10rem' height='14rem' />
 					</Tooltip>
 				}>
 				{children}

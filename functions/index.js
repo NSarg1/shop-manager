@@ -7,20 +7,27 @@ admin.initializeApp();
 exports.test = functions.firestore
 	.document("data/codics/shop/{itemId}")
 	.onUpdate((change, context) => {
-		const incomingValue = { ...change.after.data() };
+		const action = { ...change.after.data() };
 		const previousValue = { ...change.before.data() };
 
-		if (incomingValue.action !== "buy") {
-			return;
+		if (action.type === "buy") {
+			const previousSold = previousValue.sold ? previousValue.sold : 0;
+			const previousSoldQuantity = previousValue.soldQuantity
+				? previousValue.soldQuantity
+				: 0;
+
+			const sold = previousSold + action.quantity * action.price;
+			const remainedQuantity = previousValue.remainedQuantity - action.quantity;
+			const soldQuantity = previousSoldQuantity + action.quantity;
+			return change.after.ref.set(
+				{
+					sold: sold,
+					soldQuantity: soldQuantity,
+					type: "",
+					remainedQuantity: remainedQuantity,
+				},
+				{ merge: true }
+			);
 		}
-
-		const remainedQuantity = previousValue.remainedQuantity - incomingValue.quantity;
-
-		return change.after.ref.set(
-			{
-				action: "",
-				remainedQuantity: remainedQuantity,
-			},
-			{ merge: true }
-		);
+		return;
 	});
