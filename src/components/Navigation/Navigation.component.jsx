@@ -27,7 +27,7 @@ const Navigation = (props) => {
 
 	return (
 		<Nav className='navigation'>
-			<div className='Header__logo' onClick={handleClick.bind(this, "/")}>
+			<div className='navigation__logo' onClick={handleClick.bind(this, "/")}>
 				<Image imageUrl={Logo} height='3rem' width='8rem' />
 			</div>
 

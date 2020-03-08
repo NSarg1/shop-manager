@@ -10,6 +10,7 @@
 	border: 1px solid black;
 	background: $color-gradient-3;
 	z-index: 5;
+	user-select: none;
 
 	@include respond(600) {
 		top: 8rem;

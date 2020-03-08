@@ -17,10 +17,6 @@
 		flex: 0 0 8rem;
 	}
 
-	&__logo {
-		flex: 0 0;
-	}
-
 	&__cart {
 		animation: dynamicAppearance $transition-time-header ease forwards;
 		position: absolute;
